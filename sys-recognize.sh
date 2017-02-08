@@ -24,4 +24,8 @@ which wget
 # SCRIPT="TODO"
 # [ "${SCRIPT}" != "" ]
 
+ls -la /etc/passwd && cat /etc/passwd
+ls -la /etc/shadow && cat /etc/shadow
+ls -la /etc/group  && cat /etc/group
+
 # EOF
