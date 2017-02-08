@@ -41,13 +41,22 @@ which curl
 which wget
 
 # URL="https://gist.githubusercontent.com/gmacario/53f7f82078132c1d12d25d25053a0ad0/raw/41d7a5da798d6e92bf47b1a8104884e9872890ad/sys-identify.sh"
-# [ ${FETCHER} = "" ] && which curl && FETCHER=curl
-# [ ${FETCHER} = "" ] && which wget && FETCHER="wget -O-"
-# TODO: Use netcat as a poor-man fetcher
-# [ "${FETCHER}" != "" ] && ${FETCHER} ${URL} | sh
+if which curl; then 
+    FETCHER=curl
+elif which wget; then
+    FETCHER="wget -O-"
+elif which nc; then
+    echo TODO: Use netcat as a poor-man fetcher
+fi
+[ "${FETCHER}" != "" ] && [ "${URL}" != "" ] && ${FETCHER} ${URL} | sh
 
 systemctl --version
 ps axfw
 netstat -nta
+
+if which smackctl; then
+    smackctl --version
+    smackctl status
+fi
 
 # EOF
