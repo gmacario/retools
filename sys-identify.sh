@@ -58,8 +58,12 @@ netstat -nta
 if which smackctl; then
     smackctl --version
     smackctl status
+    
     ls -la /sys/fs/smackfs
     for f in /sys/fs/smackfs/*; do echo "##### File: $f #####"; cat $f; echo ""; done
+    
+    ls -laR /etc/smack
+    find /etc/smack -type f | while read f; do echo "##### File: $f #####"; cat $f; echo ""; done
 fi
 
 # EOF
