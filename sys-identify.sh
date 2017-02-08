@@ -54,9 +54,12 @@ systemctl --version
 ps axfw
 netstat -nta
 
+# Inspect SMACK configuration
 if which smackctl; then
     smackctl --version
     smackctl status
+    ls -la /sys/fs/smackfs
+    for f in /sys/fs/smackfs/*; do echo "##### File: $f #####"; cat $f; echo ""; done
 fi
 
 # EOF
