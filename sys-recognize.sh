@@ -18,4 +18,10 @@ iwconfig
 
 lsusb
 
+which curl
+which wget
+
+# SCRIPT="TODO"
+# [ "${SCRIPT}" != "" ]
+
 # EOF
