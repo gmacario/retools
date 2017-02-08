@@ -5,7 +5,9 @@
 set -x
 
 id
+whoami
 w
+who
 
 cat /proc/version # || die "ERROR: /proc filesystem not mounted"
 cat /proc/cmdline
