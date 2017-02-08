@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# Purpose: Recognize target system
+# Purpose: Identify target system
 
 set -x
 
