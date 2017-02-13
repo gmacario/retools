@@ -71,6 +71,11 @@ if which smackctl; then
     find /etc/smack -type f | while read f; do echo "##### File: $f #####"; cat $f; echo ""; done
 fi
 
+# Inspect package configuration
+if which dpkg; then
+    dpkg -l
+fi
+
 # Inspect Docker configuration
 if which docker; then
     docker --version
