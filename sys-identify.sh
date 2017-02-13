@@ -6,10 +6,12 @@
 #     curl <raw_url> | sh -x &>identify.txt
 # ================================================================================
 
-whoami
+date
+hostname
 
 id
 w
+whoami
 who
 
 cat /proc/version # || die "ERROR: /proc filesystem not mounted"
