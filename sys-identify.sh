@@ -72,13 +72,15 @@ if which smackctl; then
 fi
 
 # Inspect Docker configuration
-
-if [[ which docker ]]; then
+if which docker; then
     docker --version
     docker info
     docker version
     docker images
     docker ps -a
+fi
+if which docker-compose; then
+    docker-compose --version
 fi
 
 # EOF
