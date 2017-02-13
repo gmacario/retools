@@ -71,4 +71,14 @@ if which smackctl; then
     find /etc/smack -type f | while read f; do echo "##### File: $f #####"; cat $f; echo ""; done
 fi
 
+# Inspect Docker configuration
+
+if [[ which docker ]]; then
+    docker --version
+    docker info
+    docker version
+    docker images
+    docker ps -a
+fi
+
 # EOF
