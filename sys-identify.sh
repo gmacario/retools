@@ -19,10 +19,10 @@ cat /proc/meminfo
 cat /proc/uptime
 
 # Identify logged users
-id
-w
-whoami
-who
+which id && id
+which w && w
+which whoami && whoami
+which who && who
 
 # Identify storage partitions
 cat /proc/mounts
@@ -53,7 +53,7 @@ which ifconfig && iwconfig
 
 # Identify running services
 which systemctl && systemctl --version
-ps axfw
+ps axfw || ps
 netstat -nta
 
 # Check if there are any tools for transferring files
