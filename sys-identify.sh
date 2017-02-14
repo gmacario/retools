@@ -96,8 +96,12 @@ fi
 
 # Check GENIVI Persistence
 ls -laR /Data
-which persistence_client_library_test
-which persistence_client_library_dbus_test
+if which persistence_client_library_test; then
+    persistence_client_library_test
+fi
+if which persistence_client_library_dbus_test; then
+    echo TODO: persistence_client_library_dbus_test
+fi
 
 # Inspect SMACK configuration
 if which smackctl; then
