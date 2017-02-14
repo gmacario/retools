@@ -27,12 +27,12 @@ which who && who
 # Identify storage partitions
 cat /proc/mounts
 cat /proc/mtd
-fdisk -l
-mount
-df -h
+which fdisk && fdisk -l
+which mount && mount
+which df && df -h
 
 # List installed kernel modules
-lsmod
+which lsmod && lsmod
 
 # Identify password and groups
 ls -la /etc/passwd && cat /etc/passwd
@@ -54,7 +54,7 @@ which ifconfig && iwconfig
 # Identify running services
 which systemctl && systemctl --version
 ps axfw || ps
-netstat -nta
+which netstat && netstat -nta
 
 # Check if there are any tools for transferring files
 which nc && nc
@@ -80,9 +80,7 @@ which ruby && ruby --version
 which gem && gem --version
 
 # Inspect package configuration
-if which dpkg; then
-    dpkg -l
-fi
+which dpkg && dpkg -l
 
 # Inspect Docker configuration
 if which docker; then
