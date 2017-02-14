@@ -60,6 +60,11 @@ systemctl --version
 ps axfw
 netstat -nta
 
+# Check GENIVI Persistence
+ls -laR /Data
+which persistence_client_library_test
+which persistence_client_library_dbus_test
+
 # Inspect SMACK configuration
 if which smackctl; then
     smackctl --version
