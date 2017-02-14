@@ -60,7 +60,7 @@ netstat -nta
 which nc && nc
 which curl && curl --version
 which scp && scp
-which ssh && ssh --version
+which ssh && ssh -V
 which wget && wget
 
 # Check shells
