@@ -52,42 +52,31 @@ iwconfig
 cat /etc/issue
 cat /etc/os-release
 
-# Check if there are any tools for transferring files
-which nc
-which curl
-which wget
-
-# URL="https://gist.githubusercontent.com/gmacario/53f7f82078132c1d12d25d25053a0ad0/raw/41d7a5da798d6e92bf47b1a8104884e9872890ad/sys-identify.sh"
-if which curl; then 
-    FETCHER=curl
-elif which wget; then
-    FETCHER="wget -O-"
-elif which nc; then
-    echo TODO: Use netcat as a poor-man fetcher
-fi
-[ "${FETCHER}" != "" ] && [ "${URL}" != "" ] && ${FETCHER} ${URL} | sh
-
 # Identify running services
 systemctl --version
 ps axfw
 netstat -nta
 
-# Check GENIVI Persistence
-ls -laR /Data
-which persistence_client_library_test
-which persistence_client_library_dbus_test
+# Check if there are any tools for transferring files
+which nc && nc --version
+which curl && curl --version
+which wget && wget
 
-# Inspect SMACK configuration
-if which smackctl; then
-    smackctl --version
-    smackctl status
-    
-    ls -la /sys/fs/smackfs
-    for f in /sys/fs/smackfs/*; do echo "##### File: $f #####"; cat $f; echo ""; done
-    
-    ls -laR /etc/smack
-    find /etc/smack -type f | while read f; do echo "##### File: $f #####"; cat $f; echo ""; done
-fi
+# Check shells
+which sh && sh --version
+which bash && bash --version
+which mc && mc --version
+
+# Check Python and pip
+which python && python --version
+which pip && pip --version
+
+# Check NodeJS
+which npm && npm --version
+
+# Check Ruby and gem
+which ruby && ruby --version
+which gem && gem --version
 
 # Inspect package configuration
 if which dpkg; then
@@ -104,6 +93,23 @@ if which docker; then
 fi
 if which docker-compose; then
     docker-compose --version
+fi
+
+# Check GENIVI Persistence
+ls -laR /Data
+which persistence_client_library_test
+which persistence_client_library_dbus_test
+
+# Inspect SMACK configuration
+if which smackctl; then
+    smackctl --version
+    smackctl status
+    
+    ls -la /sys/fs/smackfs
+    for f in /sys/fs/smackfs/*; do echo "##### File: $f #####"; cat $f; echo ""; done
+    
+    ls -laR /etc/smack
+    find /etc/smack -type f | while read f; do echo "##### File: $f #####"; cat $f; echo ""; done
 fi
 
 # EOF
