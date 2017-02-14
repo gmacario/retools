@@ -57,8 +57,10 @@ ps axfw
 netstat -nta
 
 # Check if there are any tools for transferring files
-which nc && nc --version
+which nc && nc
 which curl && curl --version
+which scp && scp
+which ssh && ssh --version
 which wget && wget
 
 # Check shells
