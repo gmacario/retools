@@ -4,6 +4,7 @@
 #
 # Usage:
 #     curl <raw_url> | sh -x &>identify.txt
+#     wget -O- <raw_url> | sh -x &>identify.txt
 # ================================================================================
 
 date
