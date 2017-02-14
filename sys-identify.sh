@@ -52,8 +52,8 @@ which ip && ip address && ip route
 which ifconfig && iwconfig
 
 # Identify running services
-which systemctl && systemctl --version
 ps axfw || ps
+which systemctl && systemctl --version && systemctl --no-pager
 which netstat && netstat -nta
 
 # Check if there are any tools for transferring files
