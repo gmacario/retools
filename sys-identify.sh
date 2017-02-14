@@ -69,7 +69,8 @@ which bash && bash --version
 which mc && mc --version
 
 # Check Python and pip
-which python && python --version
+which python && python -V
+which python3 && python3 -V
 which pip && pip --version
 
 # Check NodeJS
