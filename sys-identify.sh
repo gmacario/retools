@@ -7,13 +7,9 @@
 #     wget -O- <raw_url> | sh -x &>identify.txt
 # ================================================================================
 
+# Identify system
 date
 hostname
-
-id
-w
-whoami
-who
 
 cat /proc/version # || die "ERROR: /proc filesystem not mounted"
 cat /proc/cmdline
@@ -22,26 +18,41 @@ cat /proc/cpuinfo
 cat /proc/meminfo
 cat /proc/uptime
 
+# Identify logged users
+id
+w
+whoami
+who
+
+# Identify storage partitions
 cat /proc/mounts
 cat /proc/mtd
-
-lsmod
-
 fdisk -l
 mount
 df -h
 
+# List installed kernel modules
+lsmod
+
+# Identify password and groups
 ls -la /etc/passwd && cat /etc/passwd
 ls -la /etc/shadow && cat /etc/shadow
 ls -la /etc/group  && cat /etc/group
 
+# List USB devices
 lsusb
 
+# Identify networking
 ifconfig
 ip address
 ip route
 iwconfig
 
+# Identify distro
+cat /etc/issue
+cat /etc/os-release
+
+# Check if there are any tools for transferring files
 which nc
 which curl
 which wget
@@ -56,6 +67,7 @@ elif which nc; then
 fi
 [ "${FETCHER}" != "" ] && [ "${URL}" != "" ] && ${FETCHER} ${URL} | sh
 
+# Identify running services
 systemctl --version
 ps axfw
 netstat -nta
