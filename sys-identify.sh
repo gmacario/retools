@@ -87,8 +87,8 @@ fi
 # Inspect Docker configuration
 if which docker; then
     docker --version
-    docker info
     docker version
+    docker info
     docker images
     docker ps -a
 fi
