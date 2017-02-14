@@ -39,21 +39,20 @@ ls -la /etc/passwd && cat /etc/passwd
 ls -la /etc/shadow && cat /etc/shadow
 ls -la /etc/group  && cat /etc/group
 
-# List USB devices
-lsusb
-
-# Identify networking
-ifconfig
-ip address
-ip route
-iwconfig
-
 # Identify distro
 cat /etc/issue
 cat /etc/os-release
 
+# List USB devices
+which lsusb && lsusb
+
+# Identify networking
+which ifconfig && ifconfig
+which ip && ip address && ip route
+which ifconfig && iwconfig
+
 # Identify running services
-systemctl --version
+which systemctl && systemctl --version
 ps axfw
 netstat -nta
 
