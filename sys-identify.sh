@@ -3,7 +3,7 @@
 # Purpose: Identify target system
 #
 # Usage:
-#     curl <raw_url> | sh -x &>identify.txt
+#     curl -L <raw_url> | sh -x &>identify.txt
 #     wget -O- <raw_url> | sh -x &>identify.txt
 #     curl <raw_url> | ssh <user>@<host> "sh -x 2>&1" | tee identify.txt
 # ================================================================================
