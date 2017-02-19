@@ -40,8 +40,10 @@ ls -la /etc/shadow && cat /etc/shadow
 ls -la /etc/group  && cat /etc/group
 
 # Identify distro
-cat /etc/issue
-cat /etc/os-release
+[ -e /etc/issue ] && cat /etc/issue
+[ -e /etc/os-release ] && cat /etc/os-release
+[ -e /etc/openwrt_release ] && cat /etc/openwrt_release
+[ -e /etc/openwrt_version ] && cat /etc/openwrt_version
 
 # List USB devices
 which lsusb && lsusb
@@ -82,6 +84,7 @@ which gem && gem --version
 
 # Inspect package configuration
 which dpkg && dpkg -l
+which opkg && opkg --version && opkg list-installed
 
 # Inspect Docker configuration
 if which docker; then
