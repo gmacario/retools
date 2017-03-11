@@ -60,7 +60,7 @@ which systemctl && systemctl --version && systemctl --no-pager
 which netstat && netstat -nta
 
 # Check if there are any tools for transferring files
-which nc && nc
+which nc && nc -h
 which curl && curl --version
 which scp && scp
 which ssh && ssh -V
