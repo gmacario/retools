@@ -66,6 +66,10 @@ which scp && scp
 which ssh && ssh -V
 which wget && wget
 
+# Check environment variables
+set
+printenv | sort
+
 # Check shells
 which sh && sh --version
 which bash && bash --version
